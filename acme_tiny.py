@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import argparse, subprocess, json, os, sys, base64, binascii, time, hashlib, re, copy, textwrap, logging
+import argparse, subprocess, json, os, sys, base64, binascii, time, hashlib, re, copy, textwrap, logging, time
 try:
     from urllib.request import urlopen # Python 3
 except ImportError:
@@ -110,6 +110,12 @@ def get_crt(account_key, csr, acme_dir, verifychallenge, log=LOGGER, CA=DEFAULT_
         wellknown_path = os.path.join(acme_dir, token)
         with open(wellknown_path, "w") as wellknown_file:
             wellknown_file.write(keyauthorization)
+            print("     file: %s" % (wellknown_path))
+            print("challenge: %s" % (keyauthorization))
+            print("wait ...")
+            time.sleep(300)
+            print("wait ...")
+            time.sleep(300)
 
         if verifychallenge == True:
             # check that the file is in place
