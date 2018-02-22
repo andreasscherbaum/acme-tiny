@@ -114,8 +114,6 @@ def get_crt(account_key, csr, acme_dir, verifychallenge, log=LOGGER, CA=DEFAULT_
             log.info("challenge: %s" % (keyauthorization))
             log.info("wait ...")
             time.sleep(300)
-            log.info("wait ...")
-            time.sleep(300)
 
         if verifychallenge == True:
             # check that the file is in place
