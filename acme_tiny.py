@@ -112,10 +112,11 @@ def get_crt(account_key, csr, acme_dir, verifychallenge, log=LOGGER, CA=DEFAULT_
             wellknown_file.write(keyauthorization)
             log.info("     file: %s" % (wellknown_path))
             log.info("challenge: %s" % (keyauthorization))
+            log.info("wait ... (press Enter to continue)")
             if (sys.version_info > (3, 0)):
-                input("wait ... (press Enter to continue)")
+                input("")
             else:
-                raw_input("wait ... (press Enter to continue)")
+                raw_input("")
 
         if verifychallenge == True:
             # check that the file is in place
