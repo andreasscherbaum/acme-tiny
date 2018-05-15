@@ -110,14 +110,14 @@ def get_crt(account_key, csr, acme_dir, verifychallenge, log=LOGGER, CA=DEFAULT_
         wellknown_path = os.path.join(acme_dir, token)
         with open(wellknown_path, "w") as wellknown_file:
             wellknown_file.write(keyauthorization)
-            log.info("     file: %s" % (wellknown_path))
-            log.info("challenge: %s" % (keyauthorization))
-            log.info("wait ... (press Enter to continue)")
-            log.info("")
-            if (sys.version_info > (3, 0)):
-                input("")
-            else:
-                raw_input("")
+        log.info("     file: %s" % (wellknown_path))
+        log.info("challenge: %s" % (keyauthorization))
+        log.info("wait ... (press Enter to continue)")
+        log.info("")
+        if (sys.version_info > (3, 0)):
+            input("")
+        else:
+            raw_input("")
 
         if verifychallenge == True:
             # check that the file is in place
